@@ -1,38 +1,104 @@
 .App {
   text-align: center;
+  --crossColor : #bcbe4d;
+  --circleColor : #d5895d;
+  --fontColor : #caae9d;
+}
+.App h1 {
+  font-size: 4rem;
+  margin: 2%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f2ded0;
+  color: var(--fontColor);
+  align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.x {
+  color: var(--crossColor);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.o {
+  color: var(--circleColor);
+}
+.board {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center ;
+  height: 500px;
+  width: 500px;
+  border: 4px solid var(--fontColor);
+}
+.square{
+  border: 4px solid var(--fontColor);
+  color: #f2ded0;
+  font-size: 5rem;
+  box-sizing: border-box;
   display: flex;
+  height: 100%;
+  width: 100%; 
+  justify-content: center;
+  align-items:center;
+  transition: 0.3s ease;
+}
+.square.x {
+  color: var(--crossColor);
+  border-color: var(--crossColor);
+  border-style: dashed
+}
+.square.o {
+  color: var(--circleColor);
+  border-color: var(--circleColor);
+  border-style: dashed;
+}
+.winner {
+  display: flex;
+  color: #73655d;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 4rem;
+}
+.winner p {
+  margin: 0 auto;
+  margin-bottom: 1%;
+}
+.winner button {
+  background-color: transparent;
+  border: none;  
+  color: #73655d;
+  font-size: 2rem;
+  cursor: pointer;
+  width: fit-content;
+  padding: 2%;
+  border-radius: 15px;
+
+}
+.winner span {
+  text-transform: capitalize;
+}
+button.x {
+  transition: 0.4s ease-in-out;
+}
+button.x:hover {
+  color: aliceblue;
+  background-color: var(--crossColor);
+}
+button.o {
+  transition: 0.4s ease-in-out;
+}
+button.o:hover {
+  color: aliceblue;
+  background-color: var(--circleColor);
 }
 
-.App-link {
-  color: #61dafb;
+.winner span {
+  font-weight: bold;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.winner p.x {
+  text-transform: uppercase;
+}
+.winner p.o {
+  text-transform: uppercase;
 }
